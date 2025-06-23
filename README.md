@@ -19,13 +19,19 @@ This is the official repository for our papers "OAgents: An Empirical Study of B
     <img src="./assets/oagents.png" width="80%" height="auto" />
 </div>
 
+---
+
 ## News 📰
 
 **[2025.06.23]** Released the initial codebase.
 
+---
+
 ## Introduction 📚
 
 Agentic AI has gained significant attention, but current research lacks standardization, making fair comparisons difficult. In this work, we conduct a systematic study on key design choices in agent frameworks using the GAIA and BrowseComp benchmarks. We introduce a robust evaluation protocol to ensure reproducibility and identify crucial components for effective agents. Based on our findings, we develop and open-source OAgents, a modular foundation agent framework that achieves state-of-the-art performance among open-source projects, promoting future research in Agentic AI.
+
+---
 
 ## Setup 🔍
 
@@ -57,7 +63,6 @@ cp .env_template .env
 
 Then edit the `.env` file with your credentials.
 
----
 
 #### 🔍 Search and Crawling Services
 
@@ -66,16 +71,16 @@ The agent uses the following external services for web search and content crawli
 - **Search Engine: SerpApi**  
   Used for performing web searches. Get your API key from [SerpApi](https://serpapi.com/)  and set it as:
   ```
-  SERP_API_KEY=your-serp-api-key
+  SERP_API_KEY=<your-serp-api-key>
   ```
 
 - **Web Crawler: Jina AI Reader**  
   Used for accessing and parsing web content. Sign up at [Jina AI](https://jina.ai/)  to obtain an API key and set it as:
   ```
-  JINA_API_KEY=your-jina-api-key
+  JINA_API_KEY=<your-jina-api-key>
   ```
 
-> ✅ Combining SerpApi and Jina allows a complete workflow of "searching first, then reading the content".
+---
 
 ## Evaluation of OAgents on GAIA 📕
 
@@ -118,6 +123,8 @@ Setting reflection_threshold for Reflection
 python run_gaia_tts.py --model_id gpt-4.1 --model_id_search gpt-4.1 --run_name gpt-4.1-gaia_reflection --max_steps 100 --search_type default --reflection --reflection_threshold 2  
 ```
 
+---
+
 ## Acknowledgement 📖
 
 We would like to express our sincere gratitude to the original authors and contributors of **smolagents**, an excellent open-source project that provided a solid foundation for our work. Our implementation has been adapted from the official repository:
@@ -135,6 +142,8 @@ In the context of our framework **OAgents**, we have made several modifications 
 - ⏱️ **Test-time scaling strategies**: To further reduce inference errors and improve robustness, we incorporated test-time scaling techniques, such as repeated reasoning, majority voting, and consistency filtering. These methods were used to refine decision-making during deployment and enhance overall reliability.
 
 These changes were made with the goal of conducting a more rigorous and reproducible empirical analysis of agent-based learning systems. We acknowledge the importance of building upon existing work and hope that our contributions can further enrich the community's understanding of agent framework.
+
+---
   
 ## Citation 🚩
 If you find this work useful, please consider citing our papers:
@@ -166,6 +175,8 @@ If you find this work useful, please consider citing our papers:
       url={https://arxiv.org/abs/2506.12928}, 
 }
 ```
+
+---
 
 ## Star ⭐
 
