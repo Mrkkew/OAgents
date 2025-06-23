@@ -12,8 +12,7 @@
   
 </div>
 
-This is the official repository for our papers "OAgents: An Empirical Study of Building Effective Agents" and "Scaling Test-time Compute for LLM Agents".
-</div>
+This is the official repository for our papers "OAgents: An Empirical Study of Building Effective Agents [[Paper]](https://arxiv.org/abs/2506.15741)" and "Scaling Test-time Compute for LLM Agents [[Paper]](https://arxiv.org/abs/2506.12928)".
 
 <div align="center">
     <img src="./assets/oagents.png" width="80%" height="auto" />
