@@ -44,13 +44,11 @@ Run the following command to install the required dependencies from the `require
 pip install -r ./example/oagents_deep_research/requirements.txt
 ```
 
-### Install the development version of `smolagents`
+### Install our development version of `smolagents`
 
 ```bash
 pip install -e ./.[dev]
 ```
-
-To ensure the agent runs properly, please configure the required environment variables based on the services and models you plan to use.
 
 ### Configuration `.env` File
 
