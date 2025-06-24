@@ -6,7 +6,7 @@
 
 <div align="center">
 
-  <a href='https://arxiv.org/pdf/2506.15741'><img src='https://img.shields.io/badge/Paper OAgent-arXiv-d63031?logo=arxiv&logoColor=white'></a>
+  <a href='https://arxiv.org/pdf/2506.15741'><img src='https://img.shields.io/badge/Paper OAgents-arXiv-d63031?logo=arxiv&logoColor=white'></a>
   <a href='https://arxiv.org/pdf/2506.12928'><img src='https://img.shields.io/badge/Paper TTS-arXiv-d63031?logo=arxiv&logoColor=white'></a>
   <a href='https://www.python.org/downloads/release/python-31210/'><img src='https://img.shields.io/badge/Python-3.12-green'></a>
   <a href='https://github.com/OPPO-PersonalAI/OAgents/blob/main/LICENSE'><img src='https://img.shields.io/badge/License-Apache%202.0-blue'></a>
