@@ -135,7 +135,7 @@ Their thoughtful design and clear code structure greatly facilitated our explora
 
 In the context of our framework **OAgents**, we have made several modifications to the original implementation, including but not limited to:
 
-- 🔄 **Architecture adjustments**: WWe restructured key components such as the memory module and planning system to better align with our experimental goals. Specifically, we implemented and evaluated multiple memory architectures (e.g., short-term memory, long-term memory, and etc.) and tested various agent workflows to assess their impact on task performance and learning efficiency.
+- 🔄 **Architecture adjustments**: We restructured key components such as the memory module and planning system to better align with our experimental goals. Specifically, we implemented and evaluated multiple memory architectures (e.g., short-term memory, long-term memory, and etc.) and tested various agent workflows to assess their impact on task performance and learning efficiency.
 - 🛠️ **Tools optimization**: We enhanced the agent’s toolset by refining the search agent and introducing improved search and data processing capabilities. These updates aim to significantly boost the agent's ability to acquire, interpret, and utilize external knowledge during task execution.
 - ⏱️ **Test-time scaling strategies**: To further reduce inference errors and improve robustness, we incorporated test-time scaling techniques, such as repeated reasoning, majority voting, and consistency filtering. These methods were used to refine decision-making during deployment and enhance overall reliability.
 
