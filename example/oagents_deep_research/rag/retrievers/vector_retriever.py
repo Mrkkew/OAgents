@@ -275,7 +275,6 @@ class VectorRetriever(BaseRetriever):
         return formatted_results
 
 
-    # splitter => 将contents切分 overlap
     def _split_text(contents: str | List[str]):
         if type(contents) == str:
             chunks=[]
@@ -285,7 +284,6 @@ class VectorRetriever(BaseRetriever):
             print(f"[Warning] from text_splitter: Input type {type(contents)} error! Expected type to be string or List[string]")
         return chunks
     
-    # retrieve => 检索
     def retrieve(
             self,
             query,
