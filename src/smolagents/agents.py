@@ -2015,18 +2015,20 @@ class CodeAgent(MultiStepAgent):
                         self.input_messages.append(
                         Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"This is the most similar historical steps: {self.Most_Similar.strip()}"}])
                     )
-                    self.input_messages.append(
-                        Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"This is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
-                    )
+                    if self.use_long_term_memory is not None:
+                        self.input_messages.append(
+                            Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"This is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
+                        )
                     chat_message: ChatMessage = self.model(
                         self.input_messages,
-                        stop_sequences=["<end_code>", "Observation:"],  # Define stopping conditions
+                        stop_sequences=["<end_code>", "Observation:"],
                         **additional_args,
                     )
                 elif self.use_long_term_memory:
-                    self.input_messages.append(
-                        Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"this is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
-                    )
+                    if self.use_long_term_memory is not None:
+                        self.input_messages.append(
+                            Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"this is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
+                        )
                     chat_message: ChatMessage = self.model(
                         self.input_messages,
                         stop_sequences=["<end_code>", "Observation:"],
