@@ -300,7 +300,7 @@ def teacher_retrieval_process(example, agent, args, retrieval_method, prompts, m
         "intermediate_steps": intermediate_steps,
     }
     
-    teacher_agent_reason_template = prompts["teacher_agent_reson"]
+    teacher_agent_reason_template = prompts["teacher_agent_reason"]
     teacher_agent_refine_template = prompts["teacher_agent_refine"]
     
     teacher_reason = teacher_agent_reason_template.format(

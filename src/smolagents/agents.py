@@ -358,7 +358,7 @@ class MultiStepAgent:
 
     def write_memory_to_messages(
         self,
-        memory_steps:Optional[List[ActionStep]]=None,
+        memory_steps: Optional[List[ActionStep]]=None,
         summary_mode: Optional[bool] = False,
     ) -> List[Dict[str, str]]:
         """
@@ -2198,7 +2198,7 @@ class CodeAgent(MultiStepAgent):
                 text += f'---Trajectory - {idx}---\n'
                 text += trajectory + '\n'  
             text += "you can start!"
-            anaylsis,ind = evaluate_answer(text,system_prompt = self.ORM_list_wise_prompt,mode = 'ORM-list-wise' )
+            anaylsis, ind = evaluate_answer(text,system_prompt = self.ORM_list_wise_prompt,mode = 'ORM-list-wise' )
             if 0 <= int(ind) < len(final_answer_candidates):
                 final_answer = final_answer_candidates[int(ind)][0]  # 获取对应位置的final_answer
         elif mode=='scoring':
@@ -2227,7 +2227,7 @@ class CodeAgent(MultiStepAgent):
                     text += f'---Trajectory - {idx}---\n'
                     text += trajectory + '\n'  
                 text += "you can start!"
-                anaylsis,ind = evaluate_answer(text,system_prompt = self.PRM_list_wise_prompt,mode = 'PRM-list-wise' )
+                anaylsis, ind = evaluate_answer(text,system_prompt = self.PRM_list_wise_prompt,mode = 'PRM-list-wise' )
                 if 0 <= int(ind) < len(process_candidates):
                     best_memory_step.append(process_candidates[int(ind)][0])  # 获取对应位置的final_answer
                     process_candidates.pop(int(ind))
@@ -2413,7 +2413,7 @@ class CodeAgent(MultiStepAgent):
         memory_steps.append(planning_step)
 
         current_memory_messages = self.write_memory_to_messages(memory_steps=memory_steps)
-        task_success,reflection = False,''
+        task_success, reflection = False, ''
         evaluate = True if self.reflection else False
         while not task_success and self.step_number <= self.max_steps:
             if self.planning_interval is not None and self.step_number % self.planning_interval == 0 and self.planning_interval != 1:
@@ -2476,9 +2476,13 @@ class CodeAgent(MultiStepAgent):
                     step_attrs.append(f"  {attr_name} = {attr_value}")
                 step_attrs_str = "\n".join(step_attrs)
                 return f"[Unknown Step Type: {type(step)}]\n{step_attrs_str}"   
-        all_steps = memory_steps.copy()
+
+        if not isinstance(memory_steps, list):
+            memory_steps = [memory_steps]
+        all_steps = list(memory_steps)
         if current_step is not None:
-            all_steps += [current_step]
+            all_steps.append(current_step)
+
         lines = []
         for idx, step in enumerate(all_steps, start=1):
             step_str = step_to_string(step)
