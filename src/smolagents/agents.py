@@ -2015,17 +2015,17 @@ class CodeAgent(MultiStepAgent):
                         self.input_messages.append(
                         Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"This is the most similar historical steps: {self.Most_Similar.strip()}"}])
                     )
-                    if self.use_long_term_memory is not None:
-                        self.input_messages.append(
+                    if self.long_term_memory is not None:
+                        self.long_term_memory.append(
                             Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"This is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
                         )
-                    chat_message: ChatMessage = self.model(
-                        self.input_messages,
-                        stop_sequences=["<end_code>", "Observation:"],
-                        **additional_args,
-                    )
+                        chat_message: ChatMessage = self.model(
+                            self.input_messages,
+                            stop_sequences=["<end_code>", "Observation:"],
+                            **additional_args,
+                        )
                 elif self.use_long_term_memory:
-                    if self.use_long_term_memory is not None:
+                    if self.long_term_memory is not None:
                         self.input_messages.append(
                             Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"this is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
                         )
@@ -2198,7 +2198,7 @@ class CodeAgent(MultiStepAgent):
                 text += f'---Trajectory - {idx}---\n'
                 text += trajectory + '\n'  
             text += "you can start!"
-            anaylsis, ind = evaluate_answer(text,system_prompt = self.ORM_list_wise_prompt,mode = 'ORM-list-wise' )
+            _, ind = evaluate_answer(text,system_prompt = self.ORM_list_wise_prompt,mode = 'ORM-list-wise' )
             if 0 <= int(ind) < len(final_answer_candidates):
                 final_answer = final_answer_candidates[int(ind)][0]  # 获取对应位置的final_answer
         elif mode=='scoring':
@@ -2227,7 +2227,7 @@ class CodeAgent(MultiStepAgent):
                     text += f'---Trajectory - {idx}---\n'
                     text += trajectory + '\n'  
                 text += "you can start!"
-                anaylsis, ind = evaluate_answer(text,system_prompt = self.PRM_list_wise_prompt,mode = 'PRM-list-wise' )
+                _, ind = evaluate_answer(text,system_prompt = self.PRM_list_wise_prompt,mode = 'PRM-list-wise' )
                 if 0 <= int(ind) < len(process_candidates):
                     best_memory_step.append(process_candidates[int(ind)][0])  # 获取对应位置的final_answer
                     process_candidates.pop(int(ind))
