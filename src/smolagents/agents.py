@@ -217,16 +217,16 @@ class MultiStepAgent:
         description: Optional[str] = None,
         agent_type: Optional[str] = "code_agent",
         reflection: bool = False,
-        reflection_threshold: int=-1,
-        verify_type:str = 'list-wise',
-        result_merging_type:str='list-wise',
+        reflection_threshold: int = -1,
+        verify_type: str = 'list-wise',
+        result_merging_type: str='list-wise',
         provide_run_summary: bool = False,
         final_answer_checks: Optional[List[Callable]] = None,
         debug: bool = False,
         subtask: bool = False,
         static_plan: bool = False,
         dynamic_update_plan: bool = False,
-        n_rollouts:Optional[int] = None,
+        n_rollouts: Optional[int] = 1,
         summary: bool = False,
         agent_kb: bool = False,
         top_k: Optional[int] = 3,
@@ -293,17 +293,17 @@ class MultiStepAgent:
         self.workflow = None
         # tts 
         self.n_rollouts = n_rollouts
-        self.reflection_threshold=reflection_threshold
-        self.verify_type=verify_type
-        self.result_merging_type=result_merging_type,
+        self.reflection_threshold = reflection_threshold
+        self.verify_type = verify_type
+        self.result_merging_type = result_merging_type,
         # tts prompts
         self.ORM_prompt = ""
         self.PRM_prompt = ""
         self.LIST_WISE_prompt = ""
         self.REFLECTION_prompt = ""
         self.BASE_ADDITIONAL_PROMPT = ""
-        self.ORM_list_wise_prompt=""
-        self.PRM_list_wise_prompt=""
+        self.ORM_list_wise_prompt = ""
+        self.PRM_list_wise_prompt = ""
         # memory
         self.summary=summary
         # agent kb args
