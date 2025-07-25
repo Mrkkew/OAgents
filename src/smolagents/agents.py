@@ -2019,11 +2019,11 @@ class CodeAgent(MultiStepAgent):
                         self.long_term_memory.append(
                             Message(role=MessageRole.ASSISTANT, content=[{"type": "text", "text": f"This is the long-term memory of the agent of this task: {self.long_term_memory.strip()}"}])
                         )
-                        chat_message: ChatMessage = self.model(
-                            self.input_messages,
-                            stop_sequences=["<end_code>", "Observation:"],
-                            **additional_args,
-                        )
+                    chat_message: ChatMessage = self.model(
+                        self.input_messages,
+                        stop_sequences=["<end_code>", "Observation:"],
+                        **additional_args,
+                    )
                 elif self.use_long_term_memory:
                     if self.long_term_memory is not None:
                         self.input_messages.append(
