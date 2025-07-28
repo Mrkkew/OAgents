@@ -2308,7 +2308,7 @@ class CodeAgent(MultiStepAgent):
                     final_answer=prepare_response(task,current_memory_messages,self.model)
                     task_success=True
                     break
-            base_memory_steps=self._verify_process(process_candidates,mode='list-wise')[0]
+            base_memory_steps=self._verify_process(process_candidates,mode='list-wise')
             self.step_number += 1
         self.memory.steps=base_memory_steps
 
