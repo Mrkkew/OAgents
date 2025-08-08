@@ -14,7 +14,10 @@
   
 </div>
 
-This is the official repository for our papers "OAgents: An Empirical Study of Building Effective Agents [[Paper]](https://arxiv.org/abs/2506.15741)" and "Scaling Test-time Compute for LLM Agents [[Paper]](https://arxiv.org/abs/2506.12928)" and "Efficient Agents: Building Effective Agents While Reducing Cost [[Paper]](https://arxiv.org/abs/2508.02694)".
+This is the official repository for our papers 
+- 🤖 **[OAgents](https://arxiv.org/abs/2506.15741): An Empirical Study of Building Effective Agents**
+- 🚀 **[Scaling](https://arxiv.org/abs/2506.12928) Test-time Compute for LLM Agents**
+- 💸 **[Efficient Agents](https://arxiv.org/abs/2508.02694): Building Effective Agents While Reducing Cost**
 
 <div align="center">
     <img src="./assets/oagents.png" width="80%" height="auto" />
@@ -23,6 +26,8 @@ This is the official repository for our papers "OAgents: An Empirical Study of B
 ---
 
 ## News 📰
+
+**[2025.08.06]** Released the efficient agents codebase.
 
 **[2025.06.23]** Released the initial codebase.
 
