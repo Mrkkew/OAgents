@@ -8,12 +8,13 @@
 
   <a href='https://arxiv.org/pdf/2506.15741'><img src='https://img.shields.io/badge/Paper OAgents-arXiv-d63031?logo=arxiv&logoColor=white'></a>
   <a href='https://arxiv.org/pdf/2506.12928'><img src='https://img.shields.io/badge/Paper TTS-arXiv-d63031?logo=arxiv&logoColor=white'></a>
+  <a href='https://arxiv.org/abs/2508.02694'><img src='https://img.shields.io/badge/Paper Efficient Agents-arXiv-d63031?logo=arxiv&logoColor=white'></a>
   <a href='https://www.python.org/downloads/release/python-31210/'><img src='https://img.shields.io/badge/Python-3.12-green'></a>
   <a href='https://github.com/OPPO-PersonalAI/OAgents/blob/main/LICENSE'><img src='https://img.shields.io/badge/License-Apache%202.0-blue'></a>
   
 </div>
 
-This is the official repository for our papers "OAgents: An Empirical Study of Building Effective Agents [[Paper]](https://arxiv.org/abs/2506.15741)" and "Scaling Test-time Compute for LLM Agents [[Paper]](https://arxiv.org/abs/2506.12928)".
+This is the official repository for our papers "OAgents: An Empirical Study of Building Effective Agents [[Paper]](https://arxiv.org/abs/2506.15741)" and "Scaling Test-time Compute for LLM Agents [[Paper]](https://arxiv.org/abs/2506.12928)" and "Efficient Agents: Building Effective Agents While Reducing Cost [[Paper]](https://arxiv.org/abs/2508.02694)".
 
 <div align="center">
     <img src="./assets/oagents.png" width="80%" height="auto" />
@@ -171,6 +172,20 @@ If you find this work useful, please consider citing our papers:
       archivePrefix={arXiv},
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2506.12928}, 
+}
+```
+
+**Efficient Agents: Building Effective Agents While Reducing Cost**：
+
+```bigquery
+@misc{wang2025efficientagentsbuildingeffective,
+      title={Efficient Agents: Building Effective Agents While Reducing Cost}, 
+      author={Ningning Wang and Xavier Hu and Pai Liu and He Zhu and Yue Hou and Heyuan Huang and Shengyu Zhang and Jian Yang and Jiaheng Liu and Ge Zhang and Changwang Zhang and Jun Wang and Yuchen Eleanor Jiang and Wangchunshu Zhou},
+      year={2025},
+      eprint={2508.02694},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2508.02694}, 
 }
 ```
 
