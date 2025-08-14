@@ -27,6 +27,8 @@ from PIL import Image
 
 from smolagents import Tool
 from smolagents.models import Model
+from smolagents.pricing import calculate_cost
+
 from PIL import Image
 
 load_dotenv(override=True)
