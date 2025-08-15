@@ -1,6 +1,6 @@
 from typing import Optional, Callable, Dict, Any, List
-from smolagents import Tool
-from smolagents.models import MessageRole, Model
+from oagents import Tool
+from oagents.models import MessageRole, Model
 from .mdconvert import MarkdownConverter
 from xml.dom import minidom
 from openpyxl import load_workbook

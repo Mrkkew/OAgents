@@ -501,7 +501,7 @@ class TransformersModel(Model):
     This model allows you to load and use Hugging Face's models locally using the Transformers library. It supports features like stop sequences and grammar customization.
 
     > [!TIP]
-    > You must have `transformers` and `torch` installed on your machine. Please run `pip install smolagents[transformers]` if it's not the case.
+    > You must have `transformers` and `torch` installed on your machine. Please run `pip install oagents[transformers]` if it's not the case.
 
     Parameters:
         model_id (`str`, *optional*, defaults to `"Qwen/Qwen2.5-Coder-32B-Instruct"`):
@@ -545,7 +545,7 @@ class TransformersModel(Model):
         super().__init__(**kwargs)
         if not is_torch_available() or not _is_package_available("transformers"):
             raise ModuleNotFoundError(
-                "Please install 'transformers' extra to use 'TransformersModel': `pip install 'smolagents[transformers]'`"
+                "Please install 'transformers' extra to use 'TransformersModel': `pip install 'oagents[transformers]'`"
             )
         import torch
         from transformers import AutoModelForCausalLM, AutoModelForImageTextToText, AutoProcessor, AutoTokenizer
@@ -774,7 +774,7 @@ class LiteLLMModel(Model):
             litellm.drop_params=True
         except ModuleNotFoundError:
             raise ModuleNotFoundError(
-                "Please install 'litellm' extra to use LiteLLMModel: `pip install 'smolagents[litellm]'`"
+                "Please install 'litellm' extra to use LiteLLMModel: `pip install 'oagents[litellm]'`"
             )
 
         completion_kwargs = self._prepare_completion_kwargs(
@@ -840,7 +840,7 @@ class OpenAIServerModel(Model):
             import openai
         except ModuleNotFoundError:
             raise ModuleNotFoundError(
-                "Please install 'openai' extra to use OpenAIServerModel: `pip install 'smolagents[openai]'`"
+                "Please install 'openai' extra to use OpenAIServerModel: `pip install 'oagents[openai]'`"
             ) from None
 
         super().__init__(**kwargs)
@@ -1154,7 +1154,7 @@ class FakeToolCallOpenAIServerModel(Model):
             import openai
         except ModuleNotFoundError:
             raise ModuleNotFoundError(
-                "Please install 'openai' extra to use OpenAIServerModel: `pip install 'smolagents[openai]'`"
+                "Please install 'openai' extra to use OpenAIServerModel: `pip install 'oagents[openai]'`"
             ) from None
 
         super().__init__(**kwargs)

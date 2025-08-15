@@ -321,7 +321,7 @@ class MultiStepAgent:
     
     def _load_prompt_from_package(self, file_name: str) -> str:
         try:
-            path = importlib.resources.files(f"smolagents.prompts").joinpath(file_name)
+            path = importlib.resources.files(f"oagents.prompts").joinpath(file_name)
             content = path.read_text()
             data = yaml.safe_load(content)
             return data.get("prompt", "")
@@ -522,7 +522,7 @@ class MultiStepAgent:
 
         Example:
         ```py
-        from smolagents import CodeAgent
+        from oagents import CodeAgent
         agent = CodeAgent(tools=[])
         agent.run("What is the result of 2 power 3.7384?")
         ```
@@ -1108,7 +1108,7 @@ class MultiStepAgent:
         app_template = textwrap.dedent("""
             import yaml
             import os
-            from smolagents import GradioUI, {{ class_name }}, {{ agent_dict['model']['class'] }}
+            from oagents import GradioUI, {{ class_name }}, {{ agent_dict['model']['class'] }}
 
             # Get current directory path
             CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -1271,7 +1271,7 @@ class MultiStepAgent:
 
         managed_agents = []
         for managed_agent_name, managed_agent_class in agent_dict["managed_agents"].items():
-            agent_cls = getattr(importlib.import_module("smolagents.agents"), managed_agent_class)
+            agent_cls = getattr(importlib.import_module("oagents.agents"), managed_agent_class)
             managed_agents.append(agent_cls.from_folder(folder / "managed_agents" / managed_agent_name))
 
         tools = []
@@ -1279,7 +1279,7 @@ class MultiStepAgent:
             tool_code = (folder / "tools" / f"{tool_name}.py").read_text()
             tools.append(Tool.from_code(tool_code))
 
-        model_class: Model = getattr(importlib.import_module("smolagents.models"), agent_dict["model"]["class"])
+        model_class: Model = getattr(importlib.import_module("oagents.models"), agent_dict["model"]["class"])
         model = model_class.from_dict(agent_dict["model"]["data"])
 
         args = dict(
@@ -1336,7 +1336,7 @@ class MultiStepAgent:
         repo_id = repo_url.repo_id
         metadata_update(
             repo_id,
-            {"tags": ["smolagents", "agent"]},
+            {"tags": ["oagents", "agent"]},
             repo_type="space",
             token=token,
             overwrite=True,
@@ -1380,7 +1380,7 @@ class ToolCallingAgent(MultiStepAgent):
         **kwargs,
     ):
         prompt_templates = prompt_templates or yaml.safe_load(
-            importlib.resources.files(f"smolagents.prompts").joinpath("toolcalling_agent.yaml").read_text()
+            importlib.resources.files(f"oagents.prompts").joinpath("toolcalling_agent.yaml").read_text()
         )
         super().__init__(
             tools=tools,
@@ -1635,7 +1635,7 @@ class CodeAgent(MultiStepAgent):
         self.long_term_memory=[]
         self.Most_Similar=None
         prompt_templates = prompt_templates or yaml.safe_load(
-            importlib.resources.files(f"smolagents.prompts").joinpath("code_agent.yaml").read_text()
+            importlib.resources.files(f"oagents.prompts").joinpath("code_agent.yaml").read_text()
         )
 
         super().__init__(

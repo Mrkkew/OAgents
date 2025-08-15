@@ -26,7 +26,7 @@ from urllib.parse import unquote, urljoin, urlparse
 import requests
 from serpapi import GoogleSearch, BingSearch
 
-from smolagents import Tool, OpenAIServerModel
+from oagents import Tool, OpenAIServerModel
 
 from .cookies import COOKIES
 

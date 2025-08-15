@@ -20,14 +20,14 @@ from dataclasses import asdict, dataclass
 from logging import getLogger
 from typing import TYPE_CHECKING, Any, Dict, List, TypedDict, Union
 import os
-from smolagents.models import ChatMessage, MessageRole
-from smolagents.monitoring import AgentLogger, LogLevel
-from smolagents.utils import AgentError, make_json_serializable
+from oagents.models import ChatMessage, MessageRole
+from oagents.monitoring import AgentLogger, LogLevel
+from oagents.utils import AgentError, make_json_serializable
 from openai import OpenAI
 
 if TYPE_CHECKING:
-    from smolagents.models import ChatMessage
-    from smolagents.monitoring import AgentLogger
+    from oagents.models import ChatMessage
+    from oagents.monitoring import AgentLogger
 
 
 logger = getLogger(__name__)

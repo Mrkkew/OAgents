@@ -30,7 +30,7 @@ from typing import TYPE_CHECKING, Any, Dict, Tuple, Union
 
 
 if TYPE_CHECKING:
-    from smolagents.memory import AgentLogger
+    from oagents.memory import AgentLogger
 
 
 __all__ = ["AgentError"]

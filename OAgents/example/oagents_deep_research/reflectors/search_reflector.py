@@ -16,7 +16,7 @@
 
 import yaml
 import re
-from smolagents.models import OpenAIServerModel, ChatMessage
+from oagents.models import OpenAIServerModel, ChatMessage
 import json
 import os
 import importlib

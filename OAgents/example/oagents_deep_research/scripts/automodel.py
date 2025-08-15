@@ -16,7 +16,7 @@
 
 import os
 import json
-from smolagents.models import (
+from oagents.models import (
     OpenAIServerModel,
     FakeToolCallOpenAIServerModel,
 )

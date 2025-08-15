@@ -46,10 +46,10 @@ from scripts.async_web_crawler import (
 )
 from scripts.automodel import get_api_model, process_selected_tasks_param, prepare_model_kwargs
 
-from smolagents.memory import ActionStep, PlanningStep, TaskStep
+from oagents.memory import ActionStep, PlanningStep, TaskStep
 from tqdm import tqdm
 
-from smolagents import (
+from oagents import (
     CodeAgent,
     Model,
     ToolCallingAgent,

@@ -16,7 +16,7 @@
 
 import requests
 from serpapi import GoogleSearch, BingSearch, YahooSearch, BaiduSearch
-from smolagents import Tool, OpenAIServerModel
+from oagents import Tool, OpenAIServerModel
 import time
 from typing import Any, Dict, List, Optional, Tuple, Union
 import os

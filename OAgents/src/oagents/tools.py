@@ -216,7 +216,7 @@ class Tool:
             forward_source_code = get_source(self.forward)
             tool_code = textwrap.dedent(
                 f"""
-            from smolagents import Tool
+            from oagents import Tool
             from typing import Any, Optional
 
             class {class_name}(Tool):
@@ -259,7 +259,7 @@ class Tool:
 
             tool_code = "from typing import Any, Optional\n" + instance_to_source(self, base_cls=Tool)
 
-        requirements = {el for el in get_imports(tool_code) if el not in sys.stdlib_module_names} | {"smolagents"}
+        requirements = {el for el in get_imports(tool_code) if el not in sys.stdlib_module_names} | {"oagents"}
 
         return {"name": self.name, "code": tool_code, "requirements": requirements}
 
@@ -296,7 +296,7 @@ class Tool:
                 f.write(
                     textwrap.dedent(
                         f"""
-                from smolagents import launch_gradio_demo
+                from oagents import launch_gradio_demo
                 from {tool_file_name} import {class_name}
 
                 tool = {class_name}()
@@ -345,7 +345,7 @@ class Tool:
             space_sdk="gradio",
         )
         repo_id = repo_url.repo_id
-        metadata_update(repo_id, {"tags": ["smolagents", "tool"]}, repo_type="space", token=token)
+        metadata_update(repo_id, {"tags": ["oagents", "tool"]}, repo_type="space", token=token)
 
         with tempfile.TemporaryDirectory() as work_dir:
             # Save all files.
@@ -776,7 +776,7 @@ class ToolCollection:
 
         Example:
         ```py
-        >>> from smolagents import ToolCollection, CodeAgent
+        >>> from oagents import ToolCollection, CodeAgent
 
         >>> image_tool_collection = ToolCollection.from_hub("huggingface-tools/diffusion-tools-6630bb19a942c2306a2cdb6f")
         >>> agent = CodeAgent(tools=[*image_tool_collection.tools], add_base_tools=True)
@@ -808,7 +808,7 @@ class ToolCollection:
 
         Example:
         ```py
-        >>> from smolagents import ToolCollection, CodeAgent
+        >>> from oagents import ToolCollection, CodeAgent
         >>> from mcp import StdioServerParameters
 
         >>> server_parameters = StdioServerParameters(
@@ -824,13 +824,13 @@ class ToolCollection:
         """
         try:
             from mcpadapt.core import MCPAdapt
-            from mcpadapt.smolagents_adapter import SmolAgentsAdapter
+            from mcpadapt.oagents_adapter import oagentsAdapter
         except ImportError:
             raise ImportError(
-                """Please install 'mcp' extra to use ToolCollection.from_mcp: `pip install "smolagents[mcp]"`."""
+                """Please install 'mcp' extra to use ToolCollection.from_mcp: `pip install "oagents[mcp]"`."""
             )
 
-        with MCPAdapt(server_parameters, SmolAgentsAdapter()) as tools:
+        with MCPAdapt(server_parameters, oagentsAdapter()) as tools:
             yield cls(tools)
 
 
@@ -939,7 +939,7 @@ class PipelineTool(Tool):
     ):
         if not is_torch_available() or not _is_package_available("accelerate"):
             raise ModuleNotFoundError(
-                "Please install 'transformers' extra to use a PipelineTool: `pip install 'smolagents[transformers]'`"
+                "Please install 'transformers' extra to use a PipelineTool: `pip install 'oagents[transformers]'`"
             )
 
         if model is None:

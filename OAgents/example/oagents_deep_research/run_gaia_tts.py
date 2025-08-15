@@ -50,10 +50,10 @@ from scripts.automodel import get_api_model, process_selected_tasks_param, prepa
 
 from agent_kb.agent_kb_utils import AKBClient, call_model
 
-from smolagents.memory import ActionStep, PlanningStep, TaskStep
+from oagents.memory import ActionStep, PlanningStep, TaskStep
 from tqdm import tqdm
 
-from smolagents import (
+from oagents import (
     CodeAgent,
     Model,
     ToolCallingAgent,

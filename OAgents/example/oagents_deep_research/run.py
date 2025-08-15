@@ -35,7 +35,7 @@ from scripts.text_web_browser import (
 )
 from scripts.visual_qa import visualizer
 
-from smolagents import (
+from oagents import (
     CodeAgent,
     # HfApiModel,
     LiteLLMModel,
