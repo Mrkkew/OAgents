@@ -48,12 +48,13 @@ To get started, follow the steps below:
 Run the following command to install the required dependencies from the `requirements.txt` file:
 
 ```bash
-pip install -r ./example/oagents_deep_research/requirements.txt
+pip install -r ./oagents/example/oagents_deep_research/requirements.txt
 ```
 
-### Install our development version of `smolagents`
+### Install `oagents`
 
 ```bash
+cd oagents
 pip install -e ./.[dev]
 ```
 
@@ -93,7 +94,7 @@ The agent uses the following external services for web search and content crawli
 #### Step 1: Prepare the Data
 Download the GAIA dataset and place it under the following directory:
 ```
-./example/oagents_deep_research/data/gaia
+./oagents/example/oagents_deep_research/data/gaia
 ```
 The expected directory structure is as follows:
 ```
@@ -105,7 +106,7 @@ The expected directory structure is as follows:
 #### Step 2: Test run on GAIA
 You're now all set to run on GAIA! First, go to main part of GAIA evaluation.
 ```bash
-cd ./example/oagents_deep_research
+cd ./oagents/example/oagents_deep_research
 ```
 
 Simply execute the run_gaia.py script, like so:
