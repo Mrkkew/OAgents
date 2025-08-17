@@ -27,7 +27,7 @@ This is the official repository for our papers
 
 ## News 📰
 
-**[2025.08.06]** Released the efficient agents codebase.
+**[2025.08.06]** Released the [efficient agents](https://github.com/OPPO-PersonalAI/OAgents/tree/main/Efficient_Agents) codebase.
 
 **[2025.06.23]** Released the initial codebase.
 
