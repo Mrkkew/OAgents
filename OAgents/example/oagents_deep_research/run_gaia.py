@@ -364,11 +364,11 @@ def main():
 
     if args.debug or args.concurrency == 1:
         for example in tasks_to_run:
-            answer_single_question(example, args, args.model_id, args.model_id_search, answers_file, args.debug, args.agent_kb)
+            answer_single_question(example, args, args.model_id, args.model_id_search, answers_file, args.debug)
     else:
         with ThreadPoolExecutor(max_workers=args.concurrency) as exe:
             futures = [
-                exe.submit(answer_single_question, example, args, args.model_id, args.model_id_search, answers_file, args.debug, args.agent_kb)
+                exe.submit(answer_single_question, example, args, args.model_id, args.model_id_search, answers_file, args.debug)
                 for example in tasks_to_run
             ]
             for f in tqdm(as_completed(futures), total=len(tasks_to_run), desc="Processing tasks"):

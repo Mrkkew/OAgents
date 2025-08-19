@@ -134,7 +134,6 @@ protobuf==5.29.4
 psutil==7.0.0
 PubChemPy==1.0.4
 pure_eval==0.2.3
-puremagic==1.28
 pyarrow==19.0.1
 pycparser==2.22
 pycryptodome==3.22.0
