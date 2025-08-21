@@ -13,7 +13,7 @@ import pathvalidate
 import requests
 from serpapi import GoogleSearch
 
-from smolagents import Tool
+from oagents import Tool
 
 from .cookies import COOKIES
 from .mdconvert import FileConversionException, MarkdownConverter, UnsupportedFormatException

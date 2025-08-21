@@ -27,7 +27,7 @@ This is the official repository for our papers
 
 ## News 📰
 
-**[2025.08.06]** Released the efficient agents codebase.
+**[2025.08.06]** Released the [efficient agents](https://github.com/OPPO-PersonalAI/OAgents/tree/main/Efficient_Agents) codebase.
 
 **[2025.06.23]** Released the initial codebase.
 
@@ -48,12 +48,13 @@ To get started, follow the steps below:
 Run the following command to install the required dependencies from the `requirements.txt` file:
 
 ```bash
-pip install -r ./example/oagents_deep_research/requirements.txt
+pip install -r ./oagents/example/oagents_deep_research/requirements.txt
 ```
 
-### Install our development version of `smolagents`
+### Install `oagents`
 
 ```bash
+cd oagents
 pip install -e ./.[dev]
 ```
 
@@ -93,7 +94,7 @@ The agent uses the following external services for web search and content crawli
 #### Step 1: Prepare the Data
 Download the GAIA dataset and place it under the following directory:
 ```
-./example/oagents_deep_research/data/gaia
+./oagents/example/oagents_deep_research/data/gaia
 ```
 The expected directory structure is as follows:
 ```
@@ -105,7 +106,7 @@ The expected directory structure is as follows:
 #### Step 2: Test run on GAIA
 You're now all set to run on GAIA! First, go to main part of GAIA evaluation.
 ```bash
-cd ./example/oagents_deep_research
+cd ./oagents/example/oagents_deep_research
 ```
 
 Simply execute the run_gaia.py script, like so:
@@ -204,5 +205,8 @@ If you find this work useful, please consider citing our papers:
 
 </div>
 
+
 ## We are hiring!🔥
+
 If you are interested in career opportunities with the OPPO AI Agent Team, please feel free to send an email to: **personalab_recruit@oppo.com**. There are headcounts available for both **internships** and **full-time** positions.
+

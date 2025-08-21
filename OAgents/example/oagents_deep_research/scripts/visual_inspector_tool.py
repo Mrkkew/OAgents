@@ -25,8 +25,8 @@ import requests
 from dotenv import load_dotenv
 from PIL import Image
 
-from smolagents import Tool
-from smolagents.models import Model
+from oagents import Tool
+from oagents.models import Model
 from PIL import Image
 
 load_dotenv(override=True)

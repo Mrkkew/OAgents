@@ -3,7 +3,7 @@ import os
 import shutil
 import textwrap
 from pathlib import Path
-from smolagents.utils import AgentError
+from oagents.utils import AgentError
 
 def serialize_agent_error(obj):
     if isinstance(obj, AgentError):

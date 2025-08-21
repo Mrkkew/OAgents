@@ -18,6 +18,7 @@ from typing import Optional
 
 from smolagents import Tool
 from smolagents.models import MessageRole, Model
+from smolagents.pricing import calculate_cost
 
 import openai
 import os

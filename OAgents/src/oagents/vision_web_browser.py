@@ -9,9 +9,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-from smolagents import CodeAgent, DuckDuckGoSearchTool, tool
-from smolagents.agents import ActionStep
-from smolagents.cli import load_model
+from oagents import CodeAgent, DuckDuckGoSearchTool, tool
+from oagents.agents import ActionStep
+from oagents.cli import load_model
 
 
 github_request = """

@@ -12,7 +12,7 @@ from huggingface_hub import InferenceClient
 from PIL import Image
 from transformers import AutoProcessor
 
-from smolagents import Tool, tool
+from oagents import Tool, tool
 
 
 load_dotenv(override=True)

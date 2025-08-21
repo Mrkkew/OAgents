@@ -16,8 +16,8 @@
 
 from typing import Optional
 
-from smolagents import Tool
-from smolagents.models import MessageRole, Model
+from oagents import Tool
+from oagents.models import MessageRole, Model
 
 import openai
 import os

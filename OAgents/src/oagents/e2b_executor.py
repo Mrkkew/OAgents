@@ -43,7 +43,7 @@ class E2BExecutor:
             from e2b_code_interpreter import Sandbox
         except ModuleNotFoundError:
             raise ModuleNotFoundError(
-                """Please install 'e2b' extra to use E2BExecutor: `pip install "smolagents[e2b]"`"""
+                """Please install 'e2b' extra to use E2BExecutor: `pip install "oagents[e2b]"`"""
             )
         self.logger = logger
         self.logger.log("Initializing E2B executor, hold on...")
@@ -55,11 +55,11 @@ class E2BExecutor:
         # TODO: validate installing agents package or not
         # print("Installing agents package on remote executor...")
         # self.sbx.commands.run(
-        #     "pip install git+https://github.com/huggingface/smolagents.git",
+        #     "pip install git+https://github.com/huggingface/oagents.git",
         #     timeout=300
         # )
         # print("Installation of agents package finished.")
-        additional_imports = additional_imports + ["smolagents"]
+        additional_imports = additional_imports + ["oagents"]
         if len(additional_imports) > 0:
             execution = self.sbx.commands.run("pip install " + " ".join(additional_imports))
             if execution.error:
@@ -71,7 +71,7 @@ class E2BExecutor:
         for tool in tools:
             validate_tool_attributes(tool.__class__, check_imports=False)
             tool_code = instance_to_source(tool, base_cls=Tool)
-            tool_code = tool_code.replace("from smolagents.tools import Tool", "")
+            tool_code = tool_code.replace("from oagents.tools import Tool", "")
             tool_code += f"\n{tool.name} = {tool.__class__.__name__}()\n"
             tool_codes.append(tool_code)
 

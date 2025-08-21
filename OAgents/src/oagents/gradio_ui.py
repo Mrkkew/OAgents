@@ -19,10 +19,10 @@ import re
 import shutil
 from typing import Optional
 
-from smolagents.agent_types import AgentAudio, AgentImage, AgentText, handle_agent_output_types
-from smolagents.agents import ActionStep, MultiStepAgent
-from smolagents.memory import MemoryStep
-from smolagents.utils import _is_package_available
+from oagents.agent_types import AgentAudio, AgentImage, AgentText, handle_agent_output_types
+from oagents.agents import ActionStep, MultiStepAgent
+from oagents.memory import MemoryStep
+from oagents.utils import _is_package_available
 
 
 def pull_messages_from_step(
@@ -132,7 +132,7 @@ def stream_to_gradio(
     """Runs an agent with the given task and streams the messages from the agent as gradio ChatMessages."""
     if not _is_package_available("gradio"):
         raise ModuleNotFoundError(
-            "Please install 'gradio' extra to use the GradioUI: `pip install 'smolagents[gradio]'`"
+            "Please install 'gradio' extra to use the GradioUI: `pip install 'oagents[gradio]'`"
         )
     import gradio as gr
 
@@ -181,7 +181,7 @@ class GradioUI:
     def __init__(self, agent: MultiStepAgent, file_upload_folder: str | None = None):
         if not _is_package_available("gradio"):
             raise ModuleNotFoundError(
-                "Please install 'gradio' extra to use the GradioUI: `pip install 'smolagents[gradio]'`"
+                "Please install 'gradio' extra to use the GradioUI: `pip install 'oagents[gradio]'`"
             )
         self.agent = agent
         self.file_upload_folder = file_upload_folder
@@ -269,7 +269,7 @@ class GradioUI:
                 type="messages",
                 avatar_images=(
                     None,
-                    "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/smolagents/mascot_smol.png",
+                    "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/oagents/mascot_smol.png",
                 ),
                 resizeable=True,
                 scale=1,
