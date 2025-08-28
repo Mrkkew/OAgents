@@ -204,3 +204,9 @@ If you find this work useful, please consider citing our papers:
 [![Star History Chart](https://api.star-history.com/svg?repos=OPPO-PersonalAI/OAgents&type=Date)](https://github.com/OPPO-PersonalAI/OAgents)
 
 </div>
+
+
+## We are hiring!🔥
+
+If you are interested in career opportunities with the OPPO AI Agent Team, please feel free to send an email to: **personalab_recruit@oppo.com**. There are headcounts available for both **internships** and **full-time** positions.
+
