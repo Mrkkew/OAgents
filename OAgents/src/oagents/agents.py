@@ -1630,8 +1630,8 @@ class CodeAgent(MultiStepAgent):
         self.api_key = os.getenv("OPENAI_API_KEY")
         self.api_base = os.getenv("OPENAI_BASE_URL")
         self.client = OpenAI(api_key=self.api_key, base_url=self.api_base)
-        self.texts = []  # 存储原始文本
-        self.embeddings = []  # 存储对应的向量表示
+        self.texts = []
+        self.embeddings = []
         self.long_term_memory=[]
         self.Most_Similar=None
         prompt_templates = prompt_templates or yaml.safe_load(
@@ -2172,6 +2172,7 @@ class CodeAgent(MultiStepAgent):
 
         if self.step_number == self.max_steps + 1:
             error_message = "Reached max steps."
+            start_time = time.time()
             final_answer = self.provide_final_answer(task, images)
 
             final_memory_step = ActionStep(
@@ -2179,7 +2180,9 @@ class CodeAgent(MultiStepAgent):
                 error=AgentMaxStepsError(error_message, self.logger)
             )
             final_memory_step.action_output = final_answer
+            final_memory_step.start_time = start_time
             final_memory_step.end_time = time.time()
+            final_memory_step.duration = final_memory_step.end_time - start_time
 
             self.memory.steps.append(final_memory_step)
 
